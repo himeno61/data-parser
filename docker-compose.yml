@@ -5,6 +5,7 @@ services:
       - "8000:5000"
     volumes:
       - .:/app
+      - chroma_data:/app/chroma_db
     environment:
       - FLASK_ENV=development
       - PYTHONPATH=/app
@@ -24,3 +25,6 @@ services:
     volumes:
       - .:/app
     command: pytest -n auto
+
+volumes:
+  chroma_data:
